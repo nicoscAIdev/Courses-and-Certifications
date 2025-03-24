@@ -9,7 +9,7 @@ base = {
         "apellido":"Rodriguez",
         "dni":333333333}
     }
-
+print("aca estan las keys ",base.keys())
 dnis = [333333331, 333333336, 333333339, 333333332, None, 333333333]
 
 n_encontrados = 0

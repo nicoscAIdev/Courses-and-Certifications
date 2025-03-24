@@ -16,3 +16,4 @@ print(amigos[:])
 # arranco en 0 y el primero sin incluir es el 1, con el paso default (1)
 print(amigos[:1]) 
 """Salida: 'Mateo' """
+
