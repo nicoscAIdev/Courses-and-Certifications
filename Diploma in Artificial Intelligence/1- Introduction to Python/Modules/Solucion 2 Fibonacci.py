@@ -1,29 +1,12 @@
+# Opción 2: armamos loop while que va a iterar n veces, donde n es la cantidad de elementos de la secuencia
 
-
-#Algoritmo 2:
-
-# Opción 1: solución recursiva.
-def F_n():
+def fibo(n):
     n = int(input("Ingrese el valor de n: "))
-
-    # sigamos la definición de la secuencia de Fibonacci
-    if n == 0: # Si n es 0 entonces devuelvo 0
-        return 0
-    if n == 1:
-        return 1 # Si n es 1 entonces devuelvo 1
-    else:
-        return F_n(n-1) + F_n(n-2) # En cualquier otro caso devuelvo la suma de los dos números de Fibonacci previos
-F_n()
-
-# Este algoritmo es mucho mas eficiente,
-# ya que evita la ramificacion.
-
-def fibo():
     """
     Inicializo a y b. En este caso "a" sería F_n-2 (F_0 al inicializarse)
     y "b" F_n-1 (F_1 al inicializarse)
     """
-    n = int(input("Ingrese el valor de n: "))
+
     a, b = 0, 1
     secuencia = [a, b]
 
@@ -40,3 +23,14 @@ def fibo():
     return secuencia
 fibo()
 
+"""
+fibo(10)
+Salida:
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+%timeit fibo(10)
+Salida:
+893 ns ± 5.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+(Menos tiempo que la solucion 1) 
+"""
