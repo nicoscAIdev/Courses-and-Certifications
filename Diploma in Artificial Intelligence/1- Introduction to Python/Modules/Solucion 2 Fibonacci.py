@@ -1,12 +1,14 @@
-# Opción 2: armamos loop while que va a iterar n veces, donde n es la cantidad de elementos de la secuencia
+import time
+
+def F_n(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    else:
+        return F_n(n-1) + F_n(n-2)
 
 def fibo(n):
-    n = int(input("Ingrese el valor de n: "))
-    """
-    Inicializo a y b. En este caso "a" sería F_n-2 (F_0 al inicializarse)
-    y "b" F_n-1 (F_1 al inicializarse)
-    """
-
     a, b = 0, 1
     secuencia = [a, b]
 
@@ -15,22 +17,25 @@ def fibo(n):
     elif n == 1:
         return b
 
-    n_actual = 2 # número de iteración
+    n_actual = 2
     while n_actual < n:
-        n_actual += 1 # sumo 1 a la iteración actual
-        a, b = b, a + b # Este truquito es importante!
-        secuencia.append(b) # guardo el nuevo b
+        n_actual += 1
+        a, b = b, a + b
+        secuencia.append(b)
     return secuencia
-fibo()
 
-"""
-fibo(10)
-Salida:
-[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+def principal():
+    n = int(input("Ingrese el valor de n: "))
+    punto1 = F_n(n)
 
-%timeit fibo(10)
-Salida:
-893 ns ± 5.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # Medir el tiempo de fibo(n)
+    tiempo_inicio = time.time()
+    punto2 = fibo(n)
+    tiempo_fin = time.time()
+    tiempo_ejecucion = tiempo_fin - tiempo_inicio
 
-(Menos tiempo que la solucion 1) 
-"""
+    print(f"El resultado de F_n({n}) es: {punto1}")
+    print(f"La secuencia de Fibonacci hasta {n} es: {punto2}")
+    print(f"Tiempo de ejecución de fibo({n}): {tiempo_ejecucion} segundos")
+    
+principal()

@@ -15,13 +15,27 @@ Cuando una función requiere llamarse a sí misma para poder realizar un cómput
 Entonces, tratemos de encarar el problema "traduciendo" la definición de la secuencia a código Python..."""
 
 # Opción 1: solución recursiva.
-def F_n(n):
-    n = int(input("Ingrese un numero: "))
+def Fibonacci(n):
     # sigamos la definición de la secuencia de Fibonacci
     if n == 0: # Si n es 0 entonces devuelvo 0
         return 0
     if n == 1:
         return 1 # Si n es 1 entonces devuelvo 1
     else:
-        return F_n(n-1) + F_n(n-2) # En cualquier otro caso devuelvo la suma de los dos números de Fibonacci previos
-F_n()
+        return Fibonacci(n-1) + Fibonacci(n-2) # En cualquier otro caso devuelvo la suma de los dos números de Fibonacci previos
+
+
+def recorrido(n):
+    for i in range(n):
+        print(Fibonacci(i))
+        
+def principal():
+#   Entrada
+    n = int(input("Ingrese un numero: "))
+#   Proceso:
+    Fibonacci(n)
+#   Salida
+    recorrido(n)
+principal()
+
+

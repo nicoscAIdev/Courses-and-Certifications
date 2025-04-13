@@ -28,8 +28,12 @@ def F_n_2(n): # borro las condiciones
 F_n_2(5) 
 Salida: 
 Maximum recursion depth exceeded
+"""
+import timeit
 
-%timeit fibo(10)
+timeit.fibo(10)
+
+"""
 Salida: 
 893 ns ± 5.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 """

@@ -9,6 +9,12 @@ texto_5 = "arriba la barra"
 # Recordemos el slicing:
 print(texto_1[::-1])
 
+"""
+[::-1]
+El primer ':' Significa desde el principio.
+El segundo ':' Hasta el final. 
+"""
+
 # ¿Qué pasa en este ejemplo?
 print(texto_3[::-1])
 
