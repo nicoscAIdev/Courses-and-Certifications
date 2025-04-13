@@ -32,10 +32,25 @@ def recorrido(n):
 def principal():
 #   Entrada
     n = int(input("Ingrese un numero: "))
+
 #   Proceso:
     Fibonacci(n)
+
 #   Salida
     recorrido(n)
 principal()
 
 
+"""
+def F_n_2(n): # borro las condiciones
+    return F_n_2(n-1) + F_n_2(n-2)
+
+F_n_2(5)
+
+Salida:
+maximum recursion depth exceeded
+
+¿Por que?
+borro las condiciones
+
+"""
