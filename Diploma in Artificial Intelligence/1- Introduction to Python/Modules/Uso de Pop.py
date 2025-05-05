@@ -24,3 +24,12 @@ def merge_sorted(lista_1,lista_2):
             # es porque quedan elementos en la lista2
             resultado.append(lista_2.pop(0))
     return resultado
+
+def principal():
+    lista1 = [0,3,5,8,9]
+    lista2 = [4,5,6]
+
+    resultado = merge_sorted(lista1, lista2)
+    print(resultado)
+
+principal()

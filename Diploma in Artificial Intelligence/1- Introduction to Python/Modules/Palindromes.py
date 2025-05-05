@@ -13,6 +13,7 @@ print(texto_1[::-1])
 [::-1]
 El primer ':' Significa desde el principio.
 El segundo ':' Hasta el final. 
+-1 desde atras para adelante
 """
 
 # ¿Qué pasa en este ejemplo?

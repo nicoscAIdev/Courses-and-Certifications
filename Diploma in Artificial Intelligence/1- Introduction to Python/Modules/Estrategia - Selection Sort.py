@@ -1,5 +1,19 @@
 # Algoritmo 4
 
+"""
+Algoritmos de Ordenamientos:
+
+Selection Sort (Fuerza Bruta)
+Bubble Sort
+Merge Sort
+Quicksort
+Timsort
+Insertion Sort
+
+"""
+
+
+
 def bubble_sort(lista):
     # n igual al largo de la lista
     n = len(lista)

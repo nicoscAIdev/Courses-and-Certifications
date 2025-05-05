@@ -25,6 +25,8 @@ def fibo(n):
     return secuencia
 
 def principal():
+
+#   Entrada
     n = int(input("Ingrese el valor de n: "))
     punto1 = F_n(n)
 
@@ -34,6 +36,7 @@ def principal():
     tiempo_fin = time.time()
     tiempo_ejecucion = tiempo_fin - tiempo_inicio
 
+#   Salida
     print(f"El resultado de F_n({n}) es: {punto1}")
     print(f"La secuencia de Fibonacci hasta {n} es: {punto2}")
     print(f"Tiempo de ejecución de fibo({n}): {tiempo_ejecucion} segundos")
