@@ -31,5 +31,4 @@ class Menu():
 
     def tamaño(self):
         return len(self.items)
-
 mi_menu = Menu({'latte':25, 'medialuna':15})
