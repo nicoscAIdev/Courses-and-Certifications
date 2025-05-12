@@ -17,3 +17,19 @@ class Persona():
 
 instancia_ejemplo = Persona('Matías Andrés','Ripley', 24, 'mati@rip.com')
 instancia_ejemplo.saludar()
+
+
+class Menu():
+    def __init__(self, items):
+        self.items = items
+
+    def precio(self, lista_items):
+        precio = 0
+        for nombre_item in lista_items:
+            precio = precio + self.items[nombre_item]
+        return precio
+
+    def tamaño(self):
+        return len(self.items)
+
+mi_menu = Menu({'latte':25, 'medialuna':15})
