@@ -1,16 +1,73 @@
-#Armando una evaluación cognitiva con Python
-#Han sido contratados por un hospital para programar una batería de evaluación cognitiva ampliamente utilizada en la clínica de salud mental. La misma debe tener las siguientes tareas:
+# EJERCICIO II: Herencia de clases - Rectángulo, Cuadrado y Cubo
 
-#1) Tarea de tiempo de reacción:
+# 1. Crear una clase llamada 'Rectangulo'
+#    - Atributos:
+#        a. base (float o int)
+#        b. altura (float o int)
+#    - Métodos:
+#        a. area(): devuelve el área del rectángulo (base * altura)
+#        b. get_base(): devuelve la base
 
-#Cuando el participante reciba la indicación, debe apretar una tecla lo más rápido posible. Registrar el tiempo de reacción.
-#2) Tarea de memoria
+# 2. Crear una clase llamada 'Cuadrado'
+#    - Debe heredar de la clase Rectangulo
+#    - Constructor:
+#        a. Recibe un solo parámetro: lado
+#        b. Llama al constructor de Rectangulo usando lado como base y altura (porque en un cuadrado ambos son iguales)
 
-#El participante debe recibir una lista de números por unos segundos, y luego debe recordarlos de atrás hacia adelante (es decir, dar vuelta mentalmente la lista de números)
-#3) Debe guardarse un informe con el nombre del participante y sus resultados. Para esto, crear una clase "CognitiveTest" que gestione las tareas y el guardado del informe.
+# 3. Crear una clase llamada 'Cubo'
+#    - Debe heredar de la clase Cuadrado
+#    - Constructor:
+#        a. Recibe un parámetro: lado
+#        b. Llama al constructor de Cuadrado con ese lado
+#    - Método:
+#        a. volumen(): devuelve el volumen del cubo
+#           (Debe calcularse como: área de una cara * lado)
+#           → Podés usar el método area() heredado de Rectángulo/Cuadrado
 
-#BONUS:
+# 4. Ejemplo de uso (fuera de las clases):
+#    - Crear una instancia de Rectangulo y mostrar su área
+#    - Crear una instancia de Cuadrado y mostrar su área
+#    - Crear una instancia de Cubo y mostrar su volumen
 
-#4) Tarea de vocabulario: el participante es presentado con una palabra y debe elegir su definición de un grupo de opciones.
 
+class Rectangulo:
+    
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+    
+    def area(self):
+        area = self.base * self.altura
+        
+        return area
+
+    def get_base(self):
+        return self.base
+
+
+class Cuadrado(Rectangulo):
+    def __init__(self, lado):
+        super().__init__(lado, lado)
+
+
+class Cubo(Cuadrado):
+    def __init__(self, lado):
+        super().__init__(lado)
+
+    def volumen(self):
+        volumen = self.area() * self.base
+
+        return volumen
+    
+# Se instancia Rectangulo
+rectangulo = Rectangulo(10, 25)
+print(f"El area  del Rectangulo es {rectangulo.area()}.")
+
+# Se instancia Cuadrado
+cuadrado = Cuadrado(4)
+print(f"El area  del Cuadrado es {cuadrado.area()}.")
+
+# Se instancia Cubo
+cubo = Cubo(4)
+print(f"El Volumen del Cubo es {cubo.volumen()}.")
 
