@@ -13,4 +13,18 @@
 # con dos claves: "ítem" que contiene un objeto de tipo ítem y "cantidad"
 # según la cantidad que queremos agregar al carrito.
 
-#Por último los carritos tienen un método get_total() que devuelve la suma de los precios de los ítems, multiplicados por las cantidades que hay en cada línea.
+#Por último los carritos tienen un método get_total() que devuelve la suma 
+# de los precios de los ítems, multiplicados por las cantidades que hay en cada línea.
+
+class Carrito:
+    
+    def __init__(self):
+        self._lineas = []
+        pass
+
+class Item:
+    
+    def __init__(self, nombre, precio, url):
+        self.url = ""
+        pass
+    pass
