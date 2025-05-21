@@ -25,8 +25,8 @@
 # 1) Tarea de tiempo de reacción
 # Pista: la función input('mensaje') le muestra al usuario el mensaje y espera su input
 
-
-import time
+import time # 1
+import random # 2
 
 def reaction_time():
     print("Preparate...")
@@ -40,4 +40,34 @@ def reaction_time():
 
     return f"{round(reaction_time, 4)} segundos."
 
-reaction_time()
+
+
+#2) Tarea de memoria
+def memory_test():
+    lista = [] 
+
+    print("La prueba de memoria comenzara en unos segundos...")
+    time.sleep(5)
+
+#   Generamos la Lista
+    for i in range(5):
+        lista.append(random.randint(1, 10))
+    print(lista)
+
+#   Limpia el output de la celda para que el usuario deje de ver la lista de números presentada
+    time.sleep(5)
+    print("\n" * 50)
+
+#   Pedimos la entrada
+    entrada = input("Ingrese la lista invertida, separada por espacios: ")
+    entrada = [int(num) for num in entrada.split()]
+
+    
+#   Comparar    
+    lista_invertida = lista[::-1]
+    if lista_invertida == entrada:
+        return print("Perfecto!!", lista_invertida, entrada)
+    else:
+        return print("Vuelve a intentarlo", lista_invertida, entrada)
+
+memory_test()
