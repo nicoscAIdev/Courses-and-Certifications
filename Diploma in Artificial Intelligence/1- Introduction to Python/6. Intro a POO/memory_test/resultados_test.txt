@@ -1,0 +1,3 @@
+Test cognitivo de Nico!
+reaction_time: 0.2277
+memory_test: Test exitoso! Lista: [8, 1, 1, 9, 7] | Entrada: [8, 1, 1, 9, 7]
