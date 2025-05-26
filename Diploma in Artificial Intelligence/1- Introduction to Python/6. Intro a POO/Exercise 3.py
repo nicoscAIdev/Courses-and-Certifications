@@ -91,7 +91,7 @@ class CognitiveTest:
         else:
             self.resultados["memory_test"] = f"Test fallado! Lista: {lista_invertida} | Entrada: {entrada}"
             print("Vuelve a intentarlo", lista_invertida, entrada)
-        
+    
 
 if __name__ == "__main__":
     prueba = CognitiveTest('Nico')
