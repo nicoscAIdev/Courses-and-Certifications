@@ -19,10 +19,16 @@
 import os
 
 def renombrar_archivos(directorio):
-    # Iterar sobre los archivos del directorio
+
+    archivos = os.listdir(directorio)
+    for archivo in archivos: # Iterar sobre los archivos del directorio
+        if archivo.endswith(".txt"): # Procesar solo archivos .txt
+            
+            pass
+
     # Separar cada parte del nombre (id, nombre, apellido)
     # Reordenar y renombrar el archivo
-    pass
+    
 
 # Ejemplo de uso:
 # renombrar_archivos("ruta/a/carpeta_con_archivos")
