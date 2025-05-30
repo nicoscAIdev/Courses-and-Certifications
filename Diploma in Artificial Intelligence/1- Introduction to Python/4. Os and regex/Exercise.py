@@ -18,17 +18,46 @@
 
 import os
 
+
 def renombrar_archivos(directorio):
-
     archivos = os.listdir(directorio)
-    for archivo in archivos: # Iterar sobre los archivos del directorio
-        if archivo.endswith(".txt"): # Procesar solo archivos .txt
-            
-            pass
-
-    # Separar cada parte del nombre (id, nombre, apellido)
-    # Reordenar y renombrar el archivo
     
+    for archivo in archivos:
+        print(archivo)
+        if archivo.endswith(".txt"):
+            # Separar nombre sin extensión
+            nombre_sin_ext, ext = os.path.splitext(archivo)
+            
+            # Separar partes del nombre original
+            partes = nombre_sin_ext.split("_")
+            if len(partes) != 3:
+                print(f"Nombre no compatible: {archivo}")
+                continue
 
-# Ejemplo de uso:
-# renombrar_archivos("ruta/a/carpeta_con_archivos")
+            id_archivo, nombre, apellido = partes
+
+            # Nuevo nombre con formato correcto
+            nuevo_nombre = f"{apellido}_{nombre}_{id_archivo}{ext}"
+
+            # Rutas completas
+            ruta_vieja = os.path.join(directorio, archivo)
+            ruta_nueva = os.path.join(directorio, nuevo_nombre)
+
+            # Comprobamos que no exista un archivo con el mismo nombre
+            if os.path.exists(ruta_nueva):
+                print(f"Ya existe: {ruta_nueva}, omitiendo...")
+                continue
+
+            # Renombrar
+            os.rename(ruta_vieja, ruta_nueva)
+            print(f"Renombrado: {archivo} → {nuevo_nombre}")
+
+# Ejemplo de uso (reemplaza esta ruta con la carpeta real):
+# renombrar_archivos("/ruta/a/la/carpeta")
+
+renombrar_archivos("../4. Os and regex")
+
+with open("garcia_jose_001.txt", 'w') as ar:
+    datos = "Datos ingresados en el archivo"
+    ar.write(datos)
+
